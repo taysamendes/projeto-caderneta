@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt_BR" xmlns:th="www.thymeleaf.org"
+	xmlns:p="http://primefaces.org/ui">
+<head>
+<!--/*/ <th:block th:include="fragments/bootstrap :: head"></th:block> /*/-->
+<title>Caderneta - Relatório Estudantes</title>
+</head>
+
+<body>
+	<!--/*/ <th:block th:include="fragments/header :: menu"></th:block> /*/-->
+
+	<div class="container"></div>
+
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">Id</th>
+				<th scope="col">Nome</th>
+				<th scope="col">Data de Nascimento</th>
+				<th scope="col"></th>
+				<th scope="col">Média</th>
+				<th scope="col">Final</th>
+				<th scope="col">Situação</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="estudante : ${estudantes}">
+				<th scope="row" th:text="${estudante.id}"></th>
+				<td th:text="${estudante.nome}"></td>
+				<td th:text="${#dates.format(estudante.dataNasc, 'dd/MM/yyyy')}"></td>
+				<td>
+				<a class="btn btn-outline-primary btn-sm"
+					th:href="@{/estudantes/{id}/delete(id=${estudante.id})}"> 
+					<img th:src="@{/resources/static/icons/bootstrap/trash.svg}" alt="Excluir" /></a> 
+					
+				<a class="btn btn-outline-primary btn-sm"
+					th:href="@{/estudantes/editar/{id}(id=${estudante.id})}"> 
+					<img th:src="@{/../../resources/static/icons/bootstrap/pencil-square.svg}" alt="Editar" /></a>
+				</td>
+				<!-- <td th:text="${estudante}"></td>
+				<td th:text="${estudante}"></td>
+				<td th:text="${estudante}"></td> -->
+			</tr>
+
+		</tbody>
+
+	</table>
+</body>
+</html>

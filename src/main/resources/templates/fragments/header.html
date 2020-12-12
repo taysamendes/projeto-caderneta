@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt_BR" xmlns:th="www.thymeleaf.org">
+<head>
+<!--/*/ <th:block th:include="fragments/bootstrap :: head"></th:block> /*/-->
+
+<title>Caderneta</title>
+
+</head>
+
+<body>
+
+	<div th:fragment="menu">
+
+
+
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">Caderneta</a>
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarText"
+					aria-controls="navbarText" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarText">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle nav-link active" href="#"
+							id="navbarDropdownMenuLink" role="button"
+							data-bs-toggle="dropdown" aria-expanded="true"> Cadastro</a>
+							<ul class="dropdown-menu"
+								aria-labelledby="navbarDropdownMenuLink">
+								<li><a class="dropdown-item" th:href="@{/estudantes/formulario}">Estudantes</a></li>
+								<li><a class="dropdown-item" th:href="@{/notas/formulario}">Notas</a></li>
+
+							</ul></li>
+
+
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" th:href="@{/estudantes}">Relatório</a></li>
+
+		
+					</ul>
+					<span class="navbar-text"> Navbar text with an inline
+						element </span>
+				</div>
+			</div>
+		</nav>
+</body>
+
+
+</html>
