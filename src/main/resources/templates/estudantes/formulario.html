@@ -3,6 +3,7 @@
 	xmlns:p="http://primefaces.org/ui">
 <head>
 <!--/*/ <th:block th:include="fragments/bootstrap :: head"></th:block> /*/-->
+<link th:href="@{css/login.css}" rel="stylesheet">
 <title>Caderneta - Cadastrar Estudante</title>
 </head>
 
@@ -12,7 +13,7 @@
 	<div class="container">
 		<span th:text="${mensagem}" style="color:blue"></span>
 	
-		<form class="form-floating" action="#" th:action="@{/estudantes}" th:object="${estudante}" method="POST">
+		<form class="form"  action="#" th:action="@{/estudantes}" th:object="${estudante}" method="POST">
 			
 			<input type="hidden" name="id" th:field="*{id}"/>
 

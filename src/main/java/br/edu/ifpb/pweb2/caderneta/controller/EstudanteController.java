@@ -10,10 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import br.edu.ifpb.pweb2.caderneta.business.exception.EstudanteException;
 import br.edu.ifpb.pweb2.caderneta.business.model.Estudante;
 import br.edu.ifpb.pweb2.caderneta.business.service.EstudanteService;
-import br.edu.ifpb.pweb2.caderneta.form.EstudanteForm;
 
 @Controller
 @RequestMapping("/estudantes")
@@ -33,6 +31,7 @@ public class EstudanteController {
 	@RequestMapping("/formulario") 
 	private ModelAndView form(ModelAndView modelAndView){
 		modelAndView.setViewName("estudantes/formulario"); 
+		modelAndView.addObject("estudante", new Estudante());
 		return modelAndView; 
 	 }
 	
